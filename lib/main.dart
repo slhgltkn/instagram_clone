@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/anaSayfa.dart';
+import 'package:instagram/profile.dart';
+import 'package:instagram/search.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: (anaSayfa()),
+      home: (Search()),
     );
   }
 }

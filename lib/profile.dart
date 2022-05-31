@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:instagram/anaSayfa.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -51,17 +52,35 @@ class Profile extends StatelessWidget {
   }
 }
 
+/*int seciliSayfa = 0;
+void sayfaDegistir(int index) {
+  setState(() {
+    seciliSayfa = index;
+  });
+}
+
+Widget sayfaGoster(int seciliSayfa) {
+  if (seciliSayfa == 0) {
+    return anaSayfa();
+  } else if (seciliSayfa == 4) {
+    return Profile();
+  }
+}
+*/
+
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      /*currentIndex: seciliSayfa,
+      onTap: sayfaDegistir,
+      */
       type: BottomNavigationBarType.fixed,
       backgroundColor: Colors.white,
       selectedItemColor: Colors.black87,
       unselectedItemColor: Colors.black38,
-      currentIndex: 4,
       iconSize: 30,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),

@@ -12,6 +12,8 @@ class anaSayfa extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor: Colors.black87,
+        unselectedItemColor: Colors.black38,
+        currentIndex: 0,
         iconSize: 30,
         items: [
           BottomNavigationBarItem(
@@ -100,22 +102,20 @@ class Story extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          Spacer(flex: 1),
-          StoryUser(),
-          Spacer(flex: 1),
-          StoryUser(),
-          Spacer(flex: 1),
-          StoryUser(),
-          Spacer(flex: 1),
-          StoryUser(),
-          Spacer(flex: 1),
-          StoryUser(),
-          Spacer(flex: 1),
-        ],
-      ),
+    return Row(
+      children: [
+        Spacer(flex: 1),
+        StoryUser(),
+        Spacer(flex: 1),
+        StoryUser(),
+        Spacer(flex: 1),
+        StoryUser(),
+        Spacer(flex: 1),
+        StoryUser(),
+        Spacer(flex: 1),
+        StoryUser(),
+        Spacer(flex: 1),
+      ],
     );
   }
 }
@@ -125,13 +125,18 @@ class StoryUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return CircleAvatar(
-      backgroundColor: Colors.purple,
-      radius: 35,
-      child: SizedBox(
+      radius: 39,
+      backgroundColor: Color.fromARGB(255, 221, 77, 185),
+      child: CircleAvatar(
+        radius: 35,
         child: ClipOval(
           child: Image.network(
             'https://pbs.twimg.com/media/E1Fi_JgXMAILZqf.jpg',
+            fit: BoxFit.cover,
+            width: size.width * 1,
+            height: size.height * 1,
           ),
         ),
       ),
